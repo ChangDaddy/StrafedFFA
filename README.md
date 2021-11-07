@@ -1,0 +1,2 @@
+# StrafedFFA
+Best plugin ever

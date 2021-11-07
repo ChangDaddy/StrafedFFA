@@ -7,13 +7,12 @@ import java.util.UUID;
 
 
 @Getter
-public class PlayerData {
+public class StrafedPlayer {
     private final Player player;
     private final UUID uuid;
 
-    public PlayerData(final Player player) {
+    public StrafedPlayer(final Player player) {
         this.uuid = player.getUniqueId();
         this.player = player;
     }
-
 }

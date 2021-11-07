@@ -19,7 +19,7 @@ public class DataManager implements Listener {
         Bukkit.getPluginManager().registerEvents(this, plugin);
     }
 
-    private final ConcurrentHashMap<UUID, PlayerData> dataMap = new ConcurrentHashMap<>();
+    private final ConcurrentHashMap<UUID, StrafedPlayer> dataMap = new ConcurrentHashMap<>();
 
     @EventHandler
     public void onJoin(PlayerJoinEvent event) {
@@ -34,8 +34,7 @@ public class DataManager implements Listener {
 
     public void addPlayer(final Player player) {
         if (player != null) {
-            dataMap.put(player.getUniqueId(), new PlayerData(player));
-            PlayerData data = get(player);
+            dataMap.put(player.getUniqueId(), new StrafedPlayer(player));
         }
     }
 
@@ -45,7 +44,7 @@ public class DataManager implements Listener {
         }
     }
 
-    public PlayerData get(final Player player) {
+    public StrafedPlayer get(final Player player) {
         if (player != null) {
             return dataMap.get(player.getUniqueId());
         }
